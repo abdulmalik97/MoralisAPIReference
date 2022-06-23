@@ -88,7 +88,7 @@ _provider: Proxy {_events: {…}, _eventsCount: 4, _maxListeners: 100, _log: u, 
 Get info on connection provider
 
 ```js
-Moralis.Evm.connector()
+Moralis.Evm.provider()
 ```
 
 **Output in console**
@@ -244,17 +244,3 @@ Moralis.Evm.onProviderUpdated()
 #### transferErc1155
 #### executeFunction
 
-
-
-
-Send request to moralis server
-
-```js
-core.logger.verbose('key', 'value')
-```
-<details open><summary>Options</summary>
-
-- `key`(required): server url.
-- `value`(required): {(url, method, body)}.
-
-</details>
