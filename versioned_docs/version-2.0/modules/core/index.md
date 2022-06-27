@@ -84,7 +84,7 @@ Moralis.Core.registerModules([module_name])
 
 <details open><summary>Options</summary>
 
-- `module_name`(required): string; Name of the module.
+- `moduleName`(required): string; Name of the module.
 
 </details>
 
@@ -106,7 +106,7 @@ Moralis.Core.registerModule(module_name)
 
 <details open><summary>Options</summary>
 
-- `module_name`(required): string; Name of the module
+- `moduleName`(required): string; Name of the module
 
 </details>
 

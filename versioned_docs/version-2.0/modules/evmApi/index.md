@@ -45,7 +45,7 @@ Moralis.EvmApi.native.getBlock()
 ```
 <details open><summary>Options</summary>
 
-- `Block number or block hash`(required)
+- `BlockNumberOrHash`(required)
 
 </details>
 
@@ -126,10 +126,10 @@ Moralis.EvmApi.native.getLogsByAddress()
 - `chain`(optional): The chain to query.
 - `subdomain`(optional): string; The subdomain of the moralis server to use **(Only use when selecting local devchain as chain)**
 - `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
-- `from_block`(optional): number; The minimum block number from where to get the logs. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_block` (optional): number; The date from where to get the logs (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `from_date` (optional): string; Get the logs to this date (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_date` (optional): string; Get the logs to this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `fromBlock`(optional): number; The minimum block number from where to get the logs. Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toBlock` (optional): number; The date from where to get the logs (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `fromDate` (optional): string; Get the logs to this date (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toDate` (optional): string; Get the logs to this date (any format that is accepted by momentjs). Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
 - `topic0` (optional): string; topic0
 - `topic1` (optional): string; topic1
 - `topic2` (optional): string; topic2
@@ -157,7 +157,7 @@ Moralis.EvmApi.native.getNFTTransfersByBlock()
 ```
 <details open><summary>Options</summary>
 
-- `block_number_or_hash`(required): string; The block hash or block number
+- `blockNumberOrHash`(required): string; The block hash or block number
 - `chain`(optional): The chain to query.
 - `subdomain`(optional): string; The subdomain of the moralis server to use **(Only use when selecting local devchain as chain)**
 - `offset` (optional): number; 
@@ -188,9 +188,9 @@ Moralis.EvmApi.native.getContractEvents()
 - `address`(required): string.
 - `chain`(optional): The chain to query.
 - `subdomain`(optional): string; The subdomain of the moralis server to use **(Only use when selecting local devchain as chain)**
-- `from_block`(optional): number; The minimum block number from where to get the logs. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_block` (optional): number; The date from where to get the logs (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `from_date` (optional): string; Get the logs to this date (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
+- `fromBlock`(optional): number; The minimum block number from where to get the logs. Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toBlock` (optional): number; The date from where to get the logs (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `fromDate` (optional): string; Get the logs to this date (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
 - `topic` (optional): string; 
 - `offset` (optional): number; 
 - `limit` (optional): number;
@@ -211,8 +211,8 @@ Moralis.EvmApi.account.getTokenBalances()
 - `address`(required): string.
 - `chain`(optional): The chain to query.
 - `subdomain`(optional): string; The subdomain of the moralis server to use **(Only use when selecting local devchain as chain)**
-- `to_block`(optional): number; The block number on which the balances should be checked.
-- `token_addresses`(optional): string[];
+- `toBlock`(optional): number; The block number on which the balances should be checked.
+- `tokenAddresses`(optional): string[];
 
 </details>
 
@@ -229,7 +229,7 @@ Moralis.EvmApi.account.getNativeBalance()
 - `address`(required): string; The address for which the native balance will be checked
 - `chain`(optional): The chain to query.
 - `subdomain`(optional): string; The subdomain of the moralis server to use **(Only use when selecting local devchain as chain)**
-- `to_block`(optional): number; The block number on which the balances should be checked.
+- `toBlock`(optional): number; The block number on which the balances should be checked.
 
 </details>
 
@@ -282,10 +282,10 @@ Moralis.EvmApi.account.getTokenTransfers()
 - `address`(required): string.
 - `chain`(optional): The chain to query.
 - `subdomain`(optional): string; The subdomain of the moralis server to use **(Only use when selecting local devchain as chain)**
-- `from_block`(optional): number; The minimum block number from where to get the transactions. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_block` (optional): number; The maximum block number from where to get the transactions. Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
-- `from_date` (optional): string; The date from where to get the transactions (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_date` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `fromBlock`(optional): number; The minimum block number from where to get the transactions. Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toBlock` (optional): number; The maximum block number from where to get the transactions. Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
+- `fromDate` (optional): string; The date from where to get the transactions (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toDate` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
 - `offset` (optional): number; 
 - `cursor` (optional): string;
 - `limit` (optional): number;
@@ -312,10 +312,10 @@ Moralis.EvmApi.account.getTransactions()
 - `address`(required): string.
 - `chain`(optional): The chain to query.
 - `subdomain`(optional): string; The subdomain of the moralis server to use **(Only use when selecting local devchain as chain)**
-- `from_block`(optional): number; The minimum block number from where to get the transactions. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_block` (optional): number; The maximum block number from where to get the transactions. Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
-- `from_date` (optional): string; The date from where to get the transactions (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_date` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `fromBlock`(optional): number; The minimum block number from where to get the transactions. Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toBlock` (optional): number; The maximum block number from where to get the transactions. Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
+- `fromDate` (optional): string; The date from where to get the transactions (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toDate` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
 - `offset` (optional): number; 
 - `cursor` (optional): unknown; The cursor returned in the last response (for getting the next page) 
 - `limit` (optional): number;
@@ -351,7 +351,7 @@ Moralis.EvmApi.account.getNFTs()
 - `chain`(optional): The chain to query.
 - `format`(optional): "decimal" | "hex";
 - `limit`(optional): number; 
-- `token_addresses`(optional): string[];
+- `tokenAddresses`(optional): string[];
 - `cursor`(optional): string;
 
 </details>
@@ -382,7 +382,7 @@ Moralis.EvmApi.account.getNFTsForContract()
 <details open><summary>Options</summary>
 
 - `address`(required): string.
-- `token_address`(required): string.
+- `tokenAddress`(required): string.
 - `chain`(optional): The chain to query.
 - `format`(optional): "decimal" | "hex";
 - `limit`(optional): number; 
@@ -454,11 +454,11 @@ Moralis.EvmApi.defi.getPairReserves()
 
 <details open><summary>Options</summary>
 
-- `pair_address`(required): string; Liquidity pair address
+- `pairAddress`(required): string; Liquidity pair address
 - `chain`(optional): The chain to query.
 - `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
-- `to_block` (optional): string; To get the reserves at this block number.
-- `to_date` (optional): string; Get the reserves to this date (any format that is accepted by momentjs).Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `toBlock` (optional): string; To get the reserves at this block number.
+- `toDate` (optional): string; Get the reserves to this date (any format that is accepted by momentjs).Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
 
 </details>
 
@@ -480,12 +480,12 @@ Moralis.EvmApi.defi.getPairAddress()
 
 <details open><summary>Options</summary>
 
-- `token0_address`(required): string; Token0 address.
-- `token1_address`(required): string; Token1 address.
+- `token0Address`(required): string; Token0 address.
+- `token1Address`(required): string; Token1 address.
 - `exchange` (required): "uniswapv2"| "uniswapv3" | "sushiswapv2" | "pancakeswapv2" | "pancakeswapv1" | "quickswap";
 - `chain`(optional): The chain to query.
-- `to_block` (optional): string; To get the reserves at this block number.
-- `to_date` (optional): string; Get the reserves to this date (any format that is accepted by momentjs).Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `toBlock` (optional): string; To get the reserves at this block number.
+- `toDate` (optional): string; Get the reserves to this date (any format that is accepted by momentjs).Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
 
 </details>
 
@@ -512,7 +512,7 @@ Moralis.EvmApi.token.reSyncMetadata()
 <details open><summary>Options</summary>
 
 - `address`(required): string; Address of the contract.
-- `token_id`(required): string; The id of the token.
+- `tokenId`(required): string; The id of the token.
 - `chain`(optional): The chain to query.
 - `flag` (optional): "uri" | "metadata";
 - `mode` (optional): "async" | "sync";
@@ -533,7 +533,7 @@ Moralis.EvmApi.token.getTokenPrice()
 - `chain`(optional): The chain to query.
 - `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
 - `exchange` (optional): string;
-- `to_block` (optional): number;
+- `toBlock` (optional): number;
 
 </details>
 
@@ -551,8 +551,8 @@ Moralis.EvmApi.token.getTokenAllowance()
 - `address`(required): string; Address of the contract.
 - `chain`(optional): The chain to query.
 - `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
-- `owner_address` (optional): string; The address of the token owner.
-- `spender_address` (optional): number; The address of the token spender.
+- `ownerAddress` (optional): string; The address of the token owner.
+- `spenderAddress` (optional): number; The address of the token spender.
 
 </details>
 
@@ -597,10 +597,10 @@ Moralis.EvmApi.token.getNftTransfersFromToBlock()
 
 - `address`(required): string; Address of the contract.
 - `chain`(optional): The chain to query.
-- `from_block`(optional): number; The minimum block number from where to get the transfers. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_block` (optional): number; The maximum block number from where to get the transfers. Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
-- `from_date` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_date` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `fromBlock`(optional): number; The minimum block number from where to get the transfers. Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toBlock` (optional): number; The maximum block number from where to get the transfers. Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
+- `fromDate` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toDate` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
 - `limit` (optional): number;
 - `cursor` (optional): string;
 
@@ -630,10 +630,10 @@ Moralis.EvmApi.token.getTokenAddressTransfers()
 - `address`(required): string; Address of the contract.
 - `chain`(optional): The chain to query.
 - `subdomain`(optional) - The subdomain of the moralis server to use (**Only use when selecting local devchain as chain**)
-- `from_block`(optional): number; The minimum block number from where to get the transfers. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_block` (optional): number; The maximum block number from where to get the transfers. Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
-- `from_date` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_date` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `fromBlock`(optional): number; The minimum block number from where to get the transfers. Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toBlock` (optional): number; The maximum block number from where to get the transfers. Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
+- `fromDate` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toDate` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
 - `limit` (optional): number;
 - `cursor` (optional): string;
 
@@ -661,11 +661,11 @@ Moralis.EvmApi.token.getNFTTrades()
 
 - `address`(required): string; Address of the contract.
 - `chain`(optional): The chain to query.
-- `from_block`(optional): number; The minimum block number from where to get the transfers. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_block` (optional): number; To get the reserves at this block number.
-- `from_date` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_date` (optional): string; Get the reserves to this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
-- `provider_url` (optional): string; web3 provider url to user when using **local dev chain**
+- `fromBlock`(optional): number; The minimum block number from where to get the transfers. Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toBlock` (optional): number; To get the reserves at this block number.
+- `fromDate` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toDate` (optional): string; Get the reserves to this date (any format that is accepted by momentjs). Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
+- `providerUrl` (optional): string; web3 provider url to user when using **local dev chain**
 - `marketplace` (optional): opensea; marketplace from where to get the trades (only opensea is supported at the moment).
 - `limit` (optional): number;
 - `cursor` (optional): string;
@@ -695,7 +695,7 @@ Moralis.EvmApi.token.getNFTLowestPrice()
 - `address`(required): string; Address of the contract.
 - `chain`(optional): The chain to query.
 - `days` (optional): number; The number of days to look back to find the lowest price. If not provided 7 days will be the default.
-- `provider_url` (optional): string; web3 provider url to user when using **local dev chain**
+- `providerUrl` (optional): string; web3 provider url to user when using **local dev chain**
 - `marketplace` (optional): opensea; marketplace from where to get the trades (only opensea is supported at the moment).
 
 </details>
@@ -711,7 +711,7 @@ Moralis.EvmApi.token.getWalletTokenIdTransfers()
 <details open><summary>Options</summary>
 
 - `address`(required): string; Address of the contract.
-- `token_id`(required): string; The id of the token.
+- `tokenId`(required): string; The id of the token.
 - `chain`(optional): The chain to query.
 - `format`(optional): "decimal" | "hex";
 - `order`(optional): string; he field(s) to order on and if it should be ordered in ascending or descending order. Specified by: fieldName1.order,fieldName2.order. Example 1: "block_number", "block_number.ASC", "block_number.DESC", Example 2: "block_number and contract_type", "block_number.ASC,contract_type.DESC"
@@ -831,10 +831,10 @@ Moralis.EvmApi.token.searchNFTs()
 - `format`(optional): "decimal" | "hex";
 - `filter`(optional): "name" | "description" | "attributes" | "global" | "name,description" | "name,attributes" | "description,attributes" | "name,description,attributes"; What fields the search should match on. To look into the entire metadata set the value to 'global'. To have a better response time you can look into a specific field like name.
 
-- `from_block`(optional): number; The minimum block number from where to start the search. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_block` (optional): number; The maximum block number from where to start the search. Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
-- `from_date` (optional): string; The date from where to start the search (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
-- `to_date` (optional): string; Get search results up until this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `fromBlock`(optional): number; The minimum block number from where to start the search. Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toBlock` (optional): number; The maximum block number from where to start the search. Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
+- `fromDate` (optional): string; The date from where to start the search (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
+- `toDate` (optional): string; Get search results up until this date (any format that is accepted by momentjs). Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
 - `addresses`(optional): string[]; The addresses to get metadata for.
 - `limit` (optional): number;
 - `cursor` (optional): string;
@@ -896,7 +896,7 @@ Moralis.EvmApi.token.getTokenIdOwners()
 <details open><summary>Options</summary>
 
 - `address`(required): string; Address of the contract.
-- `token_id`(required): string; The id of the token.
+- `tokenId`(required): string; The id of the token.
 - `chain`(optional): The chain to query.
 - `format`(optional): "decimal" | "hex";
 - `limit`(optional): number; 
@@ -927,7 +927,7 @@ Moralis.EvmApi.token.getTokenIdMetadata()
 <details open><summary>Options</summary>
 
 - `address`(required): string; Address of the contract.
-- `token_id`(required): string; The id of the token.
+- `tokenId`(required): string; The id of the token.
 - `chain`(optional): The chain to query.
 - `format`(optional): "decimal" | "hex";
 
@@ -949,7 +949,7 @@ symbol: "BAMC"
 synced_at: "2022-06-16T06:15:09.467Z"
 token_address: "0x7de3085b3190b3a787822ee16f23be010f5f8686"
 token_hash: "ec555d0601e95a3452d8a8bbce8aa8b9"
-token_id: "1"
+tokenId: "1"
 token_uri: "https://ipfs.moralis.io:2053/ipfs/QmajSqgxY3cWBgBeRm38vasJAcTit1kp5EwqVHxszJYgUC/1.json"
 ```
 
@@ -1044,10 +1044,10 @@ Array(37)
 19: {endpoint: 'getNFTOwners', path: '/nft/{address}/owners', price: 5, rateLimitCost: 5}
 20: {endpoint: 'getNFTMetadata', path: '/nft/{address}/metadata', price: 5, rateLimitCost: 5}
 21: {endpoint: 'syncNFTContract', path: '/nft/{address}/sync', price: 5, rateLimitCost: 25}
-22: {endpoint: 'reSyncMetadata', path: '/nft/{address}/{token_id}/metadata/resync', price: 5, rateLimitCost: 25}
-23: {endpoint: 'getTokenIdMetadata', path: '/nft/{address}/{token_id}', price: 2, rateLimitCost: 2}
-24: {endpoint: 'getTokenIdOwners', path: '/nft/{address}/{token_id}/owners', price: 20, rateLimitCost: 20}
-25: {endpoint: 'getWalletTokenIdTransfers', path: '/nft/{address}/{token_id}/transfers', price: 2, rateLimitCost: 2}
+22: {endpoint: 'reSyncMetadata', path: '/nft/{address}/{tokenId}/metadata/resync', price: 5, rateLimitCost: 25}
+23: {endpoint: 'getTokenIdMetadata', path: '/nft/{address}/{tokenId}', price: 2, rateLimitCost: 2}
+24: {endpoint: 'getTokenIdOwners', path: '/nft/{address}/{tokenId}/owners', price: 20, rateLimitCost: 20}
+25: {endpoint: 'getWalletTokenIdTransfers', path: '/nft/{address}/{tokenId}/transfers', price: 2, rateLimitCost: 2}
 26: {endpoint: 'resolveDomain', path: '/resolve/{domain}', price: 1, rateLimitCost: 1}
 27: {endpoint: 'getPairReserves', path: '/{pair_address}/reserves', price: 1, rateLimitCost: 1}
 28: {endpoint: 'getLogsByAddress', path: '/{address}/logs', price: 2, rateLimitCost: 2}
