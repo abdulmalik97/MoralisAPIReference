@@ -7,7 +7,7 @@ custom_edit_url: null
 toc_max_heading_level: 4
 ---
 
-Calls the Moralis API endpoint for results. You can test the current API here - [Moralis API](../../moralis-web3api/moralisweb3.mdx)
+Calls the Moralis API endpoint for results. You can test the current API here - [Moralis API](../moralis-web3api/moralisweb3.mdx)
 
 
 ```js
