@@ -1,8 +1,8 @@
 ---
-id: "index"
+id: "evm"
 title: "Evm Module"
-sidebar_label: "EVM"
-sidebar_position: 0
+sidebar_label: "EVM Module"
+sidebar_position: 4
 custom_edit_url: null
 toc_max_heading_level: 4
 ---
@@ -232,15 +232,107 @@ Moralis.Evm.onProviderUpdated()
 
 
 ### Connection Methods
+
+Connect to EVM wallet 
+
 #### connect
+```js
+ Moralis.Evm.connect()
+```
+
+Disconnect from EVM wallet 
+
 #### disconnect
+```js
+ Moralis.Evm.disconnect()
+```
 
 ### Chain Methods
+
 #### signMessage
+
+Sign with a custom message
+
+
+```js
+Moralis.Evm.signMessage('Hi, this is my signature')
+```
+<details open><summary>Options</summary>
+
+- `message`(required)
+
+</details>
+
 #### sendTransaction
+
+```js
+Moralis.Evm.sendTransaction()
+```
+
 #### transferNative
+Transfer Native tokens
+
+```js
+        Moralis.Evm.transferNative({
+            to: '0x992eCcC191D6F74E8Be187ed6B6AC196b08314f7',
+            value: EvmNative.create('0.00001'),
+            chain: '0x4'
+          });
+```
 #### transferErc20
+
+Transfer ERC20 tokens 
+
+```js
+const txResponse = await Moralis.Evm.transferErc20({
+            // Unis token on ropsten
+            contractAddress: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
+            to: '0x295522b61890c3672D12eFbFf4358a6411CE996F',
+            value: Erc20Value.create('0.01'),
+          });
+
+```
 #### transferErc721
+
+Transfer ERC721 tokens 
+
+```js
+      const txResponse = await Moralis.Evm.transferErc721({
+            contractAddress: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
+            to: '0x295522b61890c3672D12eFbFf4358a6411CE996F',
+            tokenId: '1',
+          });
+```
 #### transferErc1155
+
+Transfer ERC1155 tokens 
+
+```js
+    const txResponse = await Moralis.Evm.transferErc1155({
+            contractAddress: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
+            to: '0x295522b61890c3672D12eFbFf4358a6411CE996F',
+            tokenId: '1',
+            value: 1,
+          });
+```
 #### executeFunction
+
+Execute a contract function 
+```js
+
+Moralis.Evm.executefunction()
+
+```
+
+<details open><summary>Options</summary>
+
+- contractAddress (required)
+- abi (required)
+- functionName (required)
+- params
+- overrides
+
+</details>
+
+
 

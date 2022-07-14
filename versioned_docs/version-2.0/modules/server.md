@@ -1,7 +1,7 @@
 ---
-id: "index"
+id: "server"
 title: "Server Module"
-sidebar_label: "Server"
+sidebar_label: "Server Module"
 sidebar_position: 4
 custom_edit_url: null
 toc_max_heading_level: 4
