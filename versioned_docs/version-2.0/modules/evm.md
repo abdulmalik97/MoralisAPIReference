@@ -326,11 +326,11 @@ Moralis.Evm.executefunction()
 
 <details open><summary>Options</summary>
 
-- contractAddress (required)
-- abi (required)
-- functionName (required)
-- params
-- overrides
+- `contractAddress` (required)
+- `abi` (required)
+- `functionName` (required)
+- `params`
+- `overrides`
 
 </details>
 
