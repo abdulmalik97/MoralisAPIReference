@@ -1,13 +1,13 @@
 ---
-id: "index"
+id: "evmApi"
 title: "Evm Api Module"
-sidebar_label: "EVM API"
-sidebar_position: 0
+sidebar_label: "EVM API Module"
+sidebar_position: 5
 custom_edit_url: null
 toc_max_heading_level: 4
 ---
 
-Calls the Moralis API endpoint for results. You can test the current API here - [Moralis API](../../moralis-web3api/moralisweb3.mdx)
+Calls the Moralis API endpoint for results. You can test the current API here - [Moralis API](../moralis-web3api/moralisweb3.mdx)
 
 
 ```js
@@ -45,7 +45,7 @@ Moralis.EvmApi.native.getBlock()
 ```
 <details open><summary>Options</summary>
 
-- `BlockNumberOrHash`(required)
+- `BlockNumberOrBlockHash`(required)
 
 </details>
 
@@ -157,7 +157,7 @@ Moralis.EvmApi.native.getNFTTransfersByBlock()
 ```
 <details open><summary>Options</summary>
 
-- `blockNumberOrHash`(required): string; The block hash or block number
+- `block_number_or_hash`(required): string; The block hash or block number
 - `chain`(optional): The chain to query.
 - `subdomain`(optional): string; The subdomain of the moralis server to use **(Only use when selecting local devchain as chain)**
 - `offset` (optional): number; 
@@ -336,9 +336,9 @@ total: 406
 
 Gets NFTs owned by the given address
 * The response will include status [SYNCED/SYNCING] based on the contracts being indexed.
-* Use the token_address param to get results for a specific contract only
+* Use the tokenAddress param to get results for a specific contract only
 * Note results will include all indexed NFTs
-* Any request which includes the token_address param will start the indexing process for that NFT collection the very first time it is requested
+* Any request which includes the tokenAddress param will start the indexing process for that NFT collection the very first time it is requested
 
 
 ```js
@@ -371,9 +371,9 @@ total: 115
 #### getNFTsForContract
 
 Gets NFTs owned by the given address
-   * Use the token_address param to get results for a specific contract only
+   * Use the tokenAddress param to get results for a specific contract only
    * Note results will include all indexed NFTs
-   * Any request which includes the token_address param will start the indexing process for that NFT collection the very first time it is requested
+   * Any request which includes the tokenAddress param will start the indexing process for that NFT collection the very first time it is requested
 
 ```js
 Moralis.EvmApi.account.getNFTsForContract()
@@ -454,7 +454,7 @@ Moralis.EvmApi.defi.getPairReserves()
 
 <details open><summary>Options</summary>
 
-- `pairAddress`(required): string; Liquidity pair address
+- `pair_address`(required): string; Liquidity pair address
 - `chain`(optional): The chain to query.
 - `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
 - `toBlock` (optional): string; To get the reserves at this block number.
@@ -480,8 +480,8 @@ Moralis.EvmApi.defi.getPairAddress()
 
 <details open><summary>Options</summary>
 
-- `token0Address`(required): string; Token0 address.
-- `token1Address`(required): string; Token1 address.
+- `token0_address`(required): string; Token0 address.
+- `token1_address`(required): string; Token1 address.
 - `exchange` (required): "uniswapv2"| "uniswapv3" | "sushiswapv2" | "pancakeswapv2" | "pancakeswapv1" | "quickswap";
 - `chain`(optional): The chain to query.
 - `toBlock` (optional): string; To get the reserves at this block number.
@@ -500,8 +500,8 @@ token1: {address: '0xe9e7cea3dedca5984780bafc599bd69add087d56', name: 'BUSD Toke
 ### `token`
 #### reSyncMetadata
  ReSync the metadata for an NFT
-   * The metadata(default) flag will request a the NFT's metadata from the already existing token_uri
-   * The uri flag will fetch the latest token_uri from the given NFT address. In sync mode the metadata will also be fetched
+   * The metadata(default) flag will request a the NFT's metadata from the already existing tokenUri
+   * The uri flag will fetch the latest tokenUri from the given NFT address. In sync mode the metadata will also be fetched
    * The sync mode will make the endpoint synchronous so it will wait for the task to be completed before responding
    * The async mode(default) will make the endpoint asynchronous so we will wait for the task to be completed before responding
    
@@ -551,8 +551,8 @@ Moralis.EvmApi.token.getTokenAllowance()
 - `address`(required): string; Address of the contract.
 - `chain`(optional): The chain to query.
 - `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
-- `ownerAddress` (optional): string; The address of the token owner.
-- `spenderAddress` (optional): number; The address of the token spender.
+- `owner_address` (optional): string; The address of the token owner.
+- `spender_address` (optional): number; The address of the token spender.
 
 </details>
 
@@ -665,7 +665,7 @@ Moralis.EvmApi.token.getNFTTrades()
 - `toBlock` (optional): number; To get the reserves at this block number.
 - `fromDate` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'fromBlock' or 'fromDate'. If 'fromDate' and 'fromBlock' are provided, 'fromBlock' will be used.
 - `toDate` (optional): string; Get the reserves to this date (any format that is accepted by momentjs). Provide the param 'toBlock' or 'toDate'. If 'toDate' and 'toBlock' are provided, 'toBlock' will be used.
-- `providerUrl` (optional): string; web3 provider url to user when using **local dev chain**
+- `provider_url` (optional): string; web3 provider url to user when using **local dev chain**
 - `marketplace` (optional): opensea; marketplace from where to get the trades (only opensea is supported at the moment).
 - `limit` (optional): number;
 - `cursor` (optional): string;
@@ -695,7 +695,7 @@ Moralis.EvmApi.token.getNFTLowestPrice()
 - `address`(required): string; Address of the contract.
 - `chain`(optional): The chain to query.
 - `days` (optional): number; The number of days to look back to find the lowest price. If not provided 7 days will be the default.
-- `providerUrl` (optional): string; web3 provider url to user when using **local dev chain**
+- `provider_url` (optional): string; web3 provider url to user when using **local dev chain**
 - `marketplace` (optional): opensea; marketplace from where to get the trades (only opensea is supported at the moment).
 
 </details>
@@ -714,7 +714,7 @@ Moralis.EvmApi.token.getWalletTokenIdTransfers()
 - `tokenId`(required): string; The id of the token.
 - `chain`(optional): The chain to query.
 - `format`(optional): "decimal" | "hex";
-- `order`(optional): string; he field(s) to order on and if it should be ordered in ascending or descending order. Specified by: fieldName1.order,fieldName2.order. Example 1: "block_number", "block_number.ASC", "block_number.DESC", Example 2: "block_number and contract_type", "block_number.ASC,contract_type.DESC"
+- `order`(optional): string; he field(s) to order on and if it should be ordered in ascending or descending order. Specified by: fieldName1.order,fieldName2.order. Example 1: "block_number", "block_number.ASC", "block_number.DESC", Example 2: "block_number and contractType", "block_number.ASC,contractType.DESC"
 - `limit`(optional): number; 
 - `cursor`(optional): string; The cursor returned in the last response (for getting the next page)
 
@@ -854,7 +854,7 @@ total: 6674
 #### getNFTOwners
 
 * Gets all owners of NFT items within a given contract collection
-* Use after /nft/contract/{token_address} to find out who owns each token id in a collection
+* Use after /nft/contract/{tokenAddress} to find out who owns each token id in a collection
 * Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection
    
 
@@ -886,7 +886,7 @@ total: 741
 #### getTokenIdOwners
 
 * Gets all owners of NFT items within a given contract collection
-* Use after /nft/contract/{token_address} to find out who owns each token id in a collection
+* Use after /nft/contract/{tokenAddress} to find out who owns each token id in a collection
 * Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection  
 
 ```js
@@ -939,18 +939,18 @@ Moralis.EvmApi.token.getTokenIdMetadata()
 amount: "1"
 block_number: "14238158"
 block_number_minted: "14238158"
-contract_type: "ERC721"
+contractType: "ERC721"
 last_metadata_sync: "2022-06-16T06:15:09.467Z"
-last_token_uri_sync: "2022-05-19T20:40:48.775Z"
+last_tokenUri_sync: "2022-05-19T20:40:48.775Z"
 metadata: "{\"name\":\"Baby Mutant #1\",\"description\":\"\",\"image\":\"ipfs://QmPUDVLP9W1pWpCTpGvpPbMu4nVpCuu2A7M6tQovDpVDoD/1.png\",\"dna\":\"ae67505fd836e20e0077dec5d4505759f775958f\",\"edition\":1,\"date\":1645022752327,\"artist\":\"Skurvydogg\",\"attributes\":[{\"trait_type\":\"BackGrounds\",\"value\":\"Radioactive_Yellow_Forest\"},{\"trait_type\":\"Furs\",\"value\":\"Gold\"},{\"trait_type\":\"Eyes\",\"value\":\"Hypnotized_M3\"},{\"trait_type\":\"Clothes\",\"value\":\"Toga_M2\"},{\"trait_type\":\"Mouths\",\"value\":\"Color_grill_M2\"}]}"
 name: "Baby Ape Mutant Club"
 owner_of: "0x324fb4a58674758e00c3a49409b815de1398bfe8"
 symbol: "BAMC"
-synced_at: "2022-06-16T06:15:09.467Z"
-token_address: "0x7de3085b3190b3a787822ee16f23be010f5f8686"
-token_hash: "ec555d0601e95a3452d8a8bbce8aa8b9"
+syncedAt: "2022-06-16T06:15:09.467Z"
+tokenAddress: "0x7de3085b3190b3a787822ee16f23be010f5f8686"
+tokenHash: "ec555d0601e95a3452d8a8bbce8aa8b9"
 tokenId: "1"
-token_uri: "https://ipfs.moralis.io:2053/ipfs/QmajSqgxY3cWBgBeRm38vasJAcTit1kp5EwqVHxszJYgUC/1.json"
+tokenUri: "https://ipfs.moralis.io:2053/ipfs/QmajSqgxY3cWBgBeRm38vasJAcTit1kp5EwqVHxszJYgUC/1.json"
 ```
 
 #### getNFTMetadata
@@ -972,11 +972,11 @@ Moralis.EvmApi.token.getNFTMetadata()
 **Example Result in data module of return object**
 
 ```js
-contract_type: "ERC721"
+contractType: "ERC721"
 name: "Baby Ape Mutant Club"
 symbol: "BAMC"
-synced_at: "2022-02-19T00:00:00.000Z"
-token_address: "0x7de3085b3190b3a787822ee16f23be010f5f8686"
+syncedAt: "2022-02-19T00:00:00.000Z"
+tokenAddress: "0x7de3085b3190b3a787822ee16f23be010f5f8686"
 ```
 
 #### syncNFTContract
@@ -1033,7 +1033,7 @@ Array(37)
 8: {endpoint: 'getNFTs', path: '/{address}/nft', price: 5, rateLimitCost: 5}
 9: {endpoint: 'getNFTTransfers', path: '/{address}/nft/transfers', price: 5, rateLimitCost: 5}
 10: {endpoint: 'getNftTransfersByBlock', path: '/block/{block_number_or_hash}/nft/transfers', price: 2, rateLimitCost: 2}
-11: {endpoint: 'getNFTsForContract', path: '/{address}/nft/{token_address}', price: 5, rateLimitCost: 5}
+11: {endpoint: 'getNFTsForContract', path: '/{address}/nft/{tokenAddress}', price: 5, rateLimitCost: 5}
 12: {endpoint: 'getTokenMetadata', path: '/erc20/metadata', price: 1, rateLimitCost: 1}
 13: {endpoint: 'web3ApiVersion', path: '/web3/version', price: 1, rateLimitCost: 1}
 14: {endpoint: 'getTokenMetadataBySymbol', path: '/erc20/metadata/symbols', price: 1, rateLimitCost: 1}
